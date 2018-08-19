@@ -1,3 +1,7 @@
+
+# dictionary with the main columns following the pdf file on
+# http://www.b3.com.br/data/files/C8/F3/08/B4/297BE410F816C9E492D828A8/SeriesHistoricas_Layout.pdf
+
 collum_dict = {"tipo de registro": [],
                "data do pregao": [], # noqa
                "codigo bdi": [], # noqa
@@ -28,7 +32,17 @@ collum_dict = {"tipo de registro": [],
 
 def parse_line(line, info_dict):
     """
-    fdfdf
+    Function that parse a line of the txt file breaking the string
+    as describe in the B3 pdf
+
+    http://www.b3.com.br/data/files/C8/F3/08/B4/297BE410F816C9E492D828A8/SeriesHistoricas_Layout.pdf
+
+    :param line: text line
+    :type line: str
+    :param info_dict: dict with the columns as defined in collum_dict
+    :type line: dict
+    :return: updated dict
+    :rtype: dict
     """
     part = line[:2]
     info_dict["tipo de registro"].append(part)
@@ -94,12 +108,21 @@ def parse_line(line, info_dict):
     info_dict['código do papel no sistema isin ou código interno do papel'].append(part) # noqa
     part = line[242: 245]
     info_dict['número de distribuição do papel'].append(part)
+
     return info_dict
 
 
 def get_data_as_dict(path, info_dict):
     """
-    fdfdf
+    Function that parse each line of the txt file and returns
+    a dict with all the information
+
+    :param path: text path
+    :type line: str
+    :param info_dict: dict with the columns as defined in collum_dict
+    :type line: dict
+    :return: updated dict
+    :rtype: dict
     """
     with open(path, "r") as file:
         for line in file:
