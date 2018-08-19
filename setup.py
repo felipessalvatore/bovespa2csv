@@ -11,5 +11,10 @@ setup(
     license='MIT',
     test_suite="tests",
     url="https://github.com/felipessalvatore/bovespa2csv",
-    keywords=["bovespa", "parser" "csv", "excel"]
+    keywords=["bovespa", "parser" "csv", "excel"],
+        classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
 )
