@@ -6,6 +6,6 @@ python:
 install:
   - sudo apt-get update 
   - pip3 install pandas
-
+  - pip3 install xlsxwriter
 script: 
   - python3 setup.py test
