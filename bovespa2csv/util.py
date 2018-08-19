@@ -40,7 +40,7 @@ def parse_line(line, info_dict):
     :param line: text line
     :type line: str
     :param info_dict: dict with the columns as defined in collum_dict
-    :type line: dict
+    :type info_dict: dict
     :return: updated dict
     :rtype: dict
     """
@@ -118,9 +118,9 @@ def get_data_as_dict(path, info_dict):
     a dict with all the information
 
     :param path: text path
-    :type line: str
+    :type path: str
     :param info_dict: dict with the columns as defined in collum_dict
-    :type line: dict
+    :type info_dict: dict
     :return: updated dict
     :rtype: dict
     """
