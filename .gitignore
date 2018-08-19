@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # excel files
-tests/.~lock.test.xlsx#
+*.xlsx#
 
 
 # Distribution / packaging
