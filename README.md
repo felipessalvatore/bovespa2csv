@@ -1,13 +1,11 @@
 # bovespa2csv
 
-[![Build Status](https://travis-ci.org/felipessalvatore/bovespa2csv.svg?branch=master)](https://travis-ci.org/felipessalvatore/bovespa2csv)
-
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/felipessalvatore/bovespa2csv/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/felipessalvatore/bovespa2csv.svg?branch=master)](https://travis-ci.org/felipessalvatore/bovespa2csv) [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/felipessalvatore/bovespa2csv/blob/master/LICENSE)
 
 
 ## Introduction
 
-This library was created to parse the txt files from [BM&FBOVESPA/B3 site](http://www.bmfbovespa.com.br/pt_br/servicos/market-data/historico/mercado-a-vista/series-historicas/) to a **csv file** or or **excel file**.
+This library was created to parse the txt files from [BM&FBOVESPA/B3 site](http://www.bmfbovespa.com.br/pt_br/servicos/market-data/historico/mercado-a-vista/series-historicas/) to a **csv file** or to an **excel file**.
 
 
 ### Install
@@ -40,9 +38,6 @@ You can also use the class `BovespaParser` to get a pandas DataFrame from the tx
 
 
 ```python
-# -*- coding: utf-8 -*-
-
-
 from BovespaParser import BovespaParser
 
 parser = BovespaParser()
