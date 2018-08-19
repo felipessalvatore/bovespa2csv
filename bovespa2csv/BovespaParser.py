@@ -7,7 +7,22 @@ except ImportError:
 
 
 class BovespaParser(object):
-    """docstring for ClassName"""
+    """
+    Class to parse a txt document that can be obtained in the site
+
+    http://www.bmfbovespa.com.br/pt_br/servicos/market-data/historico/mercado-a-vista/series-historicas/
+
+    The document can be transformed into a csv or an excel file.
+
+    Example:
+    suppose bovespa text is the file 'COTAHIST_DXXXXXX.TXT'
+
+        from BovespaParser import BovespaParser
+
+        parser = BovespaParser()
+        parser.to_csv("COTAHIST_DXXXXXX.TXT","example.csv")
+        parser.to_excel("COTAHIST_DXXXXXX.TXT","example.xlsx")
+    """
     def __init__(self):
         self.info_dict = copy.deepcopy(collum_dict)
         self.df = None
@@ -40,14 +55,23 @@ class BovespaParser(object):
 
     def read_txt(self, path):
         """
-        fdfdf
+        Method to parse each line of the txt
+        and store the information into a DataFrame
+
+        :param path: text path
+        :type path: str
         """
         self.info_dict = get_data_as_dict(path, self.info_dict)
         self.df = pd.DataFrame(self.info_dict)
 
     def to_csv(self, input_path, output_path):
         """
-        fdfdf
+        Method to transform a Bovespa txt file into a csv file
+
+        :param input_path: path to Bovespa txt
+        :type input_path: str
+        :param output_path: path to csv file
+        :type output_path: str
         """
         if self.df is None:
             self.read_txt(input_path)
@@ -56,7 +80,12 @@ class BovespaParser(object):
 
     def to_excel(self, input_path, output_path):
         """
-        fdfdf
+        Method to transform a Bovespa txt file into a xlsx file
+
+        :param input_path: path to Bovespa txt
+        :type input_path: str
+        :param output_path: path to xlsx file
+        :type output_path: str
         """
         if self.df is None:
             self.read_txt(input_path)
