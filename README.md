@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This library was created to parse the txt files from [BM&FBOVESPA/B3 site](http://www.bmfbovespa.com.br/pt_br/servicos/market-data/historico/mercado-a-vista/series-historicas/) to a **csv file** or to an **excel file**.
+This library was created to parse the txt files from [BM&FBOVESPA/B3 site](http://www.bmfbovespa.com.br/pt_br/servicos/market-data/historico/mercado-a-vista/series-historicas/) to a **csv file** or to an **xlsx file**.
 
 
 ### Install
@@ -27,7 +27,7 @@ You can either use the script `parse_file.py` to create a csv file as follows:
 ```
 
 
-or to create a excel file:
+or to create a xlsx file:
 
 ```
   $ cd bovespa2csv 

@@ -17,7 +17,7 @@ class BovespaParser(object):
     Example:
     suppose bovespa text is the file 'COTAHIST_DXXXXXX.TXT'
 
-        from BovespaParser import BovespaParser
+        from bovespa2csv.BovespaParser import BovespaParser
 
         parser = BovespaParser()
         parser.to_csv("COTAHIST_DXXXXXX.TXT","example.csv")
