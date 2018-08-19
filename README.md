@@ -38,7 +38,7 @@ You can also use the class `BovespaParser` to get a pandas DataFrame from the tx
 
 
 ```python
-from BovespaParser import BovespaParser
+from bovespa2csv.BovespaParser import BovespaParser
 
 parser = BovespaParser()
 parser.read_txt("COTAHIST_DXXXXXX.TXT")
