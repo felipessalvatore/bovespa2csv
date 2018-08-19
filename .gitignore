@@ -8,6 +8,7 @@ __pycache__/
 
 # excel files
 *.xlsx#
+*.xlsx
 
 
 # Distribution / packaging
