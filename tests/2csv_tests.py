@@ -1,10 +1,7 @@
 import unittest
 import os
 import shutil
-# from contra_qa.text_generation.boolean1_neg import boolean1
-# from contra_qa.text_generation.boolean2_S_and import boolean2
-# from contra_qa.text_generation.boolean3_NP_and import boolean3
-# from contra_qa.text_generation.boolean4_VP_and import boolean4
+from bovespa2csv.util import collum_dict, parse_line, get_data_as_dict
 
 
 class ParseDataTest(unittest.TestCase):
@@ -17,7 +14,12 @@ class ParseDataTest(unittest.TestCase):
 
     @classmethod
     def setUp(cls):
-        pass
+        cls.path = os.path.join("tests", "toy_data", "example.txt")
 
-    def test_read_file(self):
+    def test_read_each_line_of_file(self):
+        info_dict = collum_dict
+        my_dict = get_data_as_dict(self.path, info_dict)
+        cond = True
+        for c in my_dict.keys():
+            cond = cond and 10 == len(my_dict[c])
         self.assertTrue(cond)
