@@ -1,6 +1,6 @@
 # bovespa2csv
 
-[![Build Status](https://travis-ci.org/felipessalvatore/bovespa2csv.svg?branch=master)](https://travis-ci.org/felipessalvatore/bovespa2csv) [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/felipessalvatore/bovespa2csv/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/felipessalvatore/bovespa2csv.svg?branch=master)](https://travis-ci.org/felipessalvatore/bovespa2csv) [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/felipessalvatore/bovespa2csv/blob/master/LICENSE)[![Version](https://img.shields.io/badge/bovespa2csv-0.0.2-blue.svg) 
 
 
 ## Introduction
@@ -10,15 +10,23 @@ This library was created to parse the txt files from [BM&FBOVESPA/B3 site](http:
 
 ### Install
 
-The first thing you need to do is to install all the requirements by running:
+You can either install by pip:
 
 ```
+$ pip3 install bovespa2csv
+```
+
+or by cloning the repository on Github:
+
+```
+$ git clone git@github.com:felipessalvatore/bovespa2csv.git
+$ cd bovespa2csv
 $ pip3 install -r requirements.txt
 ```
 
 ## Usage
 
-You can either use the script `parse_file.py` to create a csv file as follows:
+You can use the script `parse_file.py` to create a csv file:
 
 
 ```
