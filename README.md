@@ -1,6 +1,6 @@
 # bovespa2csv
 
-[![Build Status](https://travis-ci.org/felipessalvatore/bovespa2csv.svg?branch=master)](https://travis-ci.org/felipessalvatore/bovespa2csv) [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/felipessalvatore/bovespa2csv/blob/master/LICENSE)[![Version](https://img.shields.io/badge/bovespa2csv-0.0.2-blue.svg) 
+[![Build Status](https://travis-ci.org/felipessalvatore/bovespa2csv.svg?branch=master)](https://travis-ci.org/felipessalvatore/bovespa2csv) [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/felipessalvatore/bovespa2csv/blob/master/LICENSE)[![Version](https://img.shields.io/badge/bovespa2csv-0.0.2-blue.svg)]
 
 
 ## Introduction
