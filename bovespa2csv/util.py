@@ -124,8 +124,9 @@ def get_data_as_dict(path, info_dict):
     :return: updated dict
     :rtype: dict
     """
-    with open(path, "r") as file:
-        for line in file:
+    # with open(path, "r", encoding='latin-1') as file:
+    with open(path, "r", encoding='latin-1') as file:
+        for i, line in enumerate(file):
             if line[2:10] != "COTAHIST":
                 try:
                     _ = line[1] # noqa
