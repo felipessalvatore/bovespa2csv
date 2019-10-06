@@ -2,32 +2,34 @@
 # dictionary with the main columns following the pdf file on
 # http://www.b3.com.br/data/files/C8/F3/08/B4/297BE410F816C9E492D828A8/SeriesHistoricas_Layout.pdf
 
+import pandas as pd
+
 collum_dict = {"tipo de registro": [],
-               "data do pregao": [], # noqa
-               "codigo bdi": [], # noqa
-               "codigo de negociação do papel": [], # noqa
-               "tipo de mercado": [], # noqa
-               "nome resumido da empresa emissora do papel": [], # noqa
-               "especificacao do papel": [], # noqa
-               "prazo em dias do mercado a termo": [], # noqa
-               "moeda de referencia": [], # noqa
-               "preco de abertura do papel-mercado no pregao": [], # noqa
-               "preco maximo do papel-mercado no pregao": [], # noqa
-               "preco minimo do papel-mercado no pregao": [], # noqa
-               "preco medio do papel-mercado no pregao": [], # noqa
-               "preco do ultimo negocio do papel-mercado no pregao": [], # noqa
-               "preco da melhor oferta de compra do papel-mercado no pregao": [], # noqa
-               "preco da melhor oferta de venda do papel-mercado no pregao": [], # noqa
-               "numero de negocios efetuados com o papel mercado no pregao": [], # noqa
-               "quantidade total de titulos negociados neste papel-mercado": [], # noqa
-               "volume total de titulos negociados neste papel-mercado": [], # noqa
-               "preco de exercicio para o mercado de opcoes ou valor do contrato para o mercado de  termo secundario": [], # noqa
-               'indicador de correção de preços de exercícios ou valores de contrato para os mercados de opções ou termo secundário': [], # noqa
-               'data do vencimento para os mercados de opções ou termo secundário': [], # noqa
-               'fator de cotação do papel': [], # noqa
-               'preço de exercício em pontos para opções referenciadas em dólar ou valor de contrato em pontos para termo secundário': [], # noqa
-               'código do papel no sistema isin ou código interno do papel': [], # noqa
-               'número de distribuição do papel': []} # noqa
+               "data do pregao": [],  # noqa
+               "codigo bdi": [],  # noqa
+               "codigo de negociação do papel": [],  # noqa
+               "tipo de mercado": [],  # noqa
+               "nome resumido da empresa emissora do papel": [],  # noqa
+               "especificacao do papel": [],  # noqa
+               "prazo em dias do mercado a termo": [],  # noqa
+               "moeda de referencia": [],  # noqa
+               "preco de abertura do papel-mercado no pregao": [],  # noqa
+               "preco maximo do papel-mercado no pregao": [],  # noqa
+               "preco minimo do papel-mercado no pregao": [],  # noqa
+               "preco medio do papel-mercado no pregao": [],  # noqa
+               "preco do ultimo negocio do papel-mercado no pregao": [],  # noqa
+               "preco da melhor oferta de compra do papel-mercado no pregao": [],  # noqa
+               "preco da melhor oferta de venda do papel-mercado no pregao": [],  # noqa
+               "numero de negocios efetuados com o papel mercado no pregao": [],  # noqa
+               "quantidade total de titulos negociados neste papel-mercado": [],  # noqa
+               "volume total de titulos negociados neste papel-mercado": [],  # noqa
+               "preco de exercicio para o mercado de opcoes ou valor do contrato para o mercado de  termo secundario": [],  # noqa
+               'indicador de correção de preços de exercícios ou valores de contrato para os mercados de opções ou termo secundário': [],  # noqa
+               'data do vencimento para os mercados de opções ou termo secundário': [],  # noqa
+               'fator de cotação do papel': [],  # noqa
+               'preço de exercício em pontos para opções referenciadas em dólar ou valor de contrato em pontos para termo secundário': [],  # noqa
+               'código do papel no sistema isin ou código interno do papel': [],  # noqa
+               'número de distribuição do papel': []}  # noqa
 
 
 def parse_line(line, info_dict):
@@ -76,36 +78,36 @@ def parse_line(line, info_dict):
     info_dict["preco medio do papel-mercado no pregao"].append(part)
     part = line[108:121]
     part = float(part) / 100
-    info_dict["preco do ultimo negocio do papel-mercado no pregao"].append(part) # noqa
+    info_dict["preco do ultimo negocio do papel-mercado no pregao"].append(part)  # noqa
     part = line[121:134]
     part = float(part) / 100
-    info_dict["preco da melhor oferta de compra do papel-mercado no pregao"].append(part) # noqa
+    info_dict["preco da melhor oferta de compra do papel-mercado no pregao"].append(part)  # noqa
     part = line[134:147]
     part = float(part) / 100
-    info_dict["preco da melhor oferta de venda do papel-mercado no pregao"].append(part) # noqa
+    info_dict["preco da melhor oferta de venda do papel-mercado no pregao"].append(part)  # noqa
     part = line[147:152]
     part = float(part) / 100
-    info_dict["numero de negocios efetuados com o papel mercado no pregao"].append(part) # noqa
+    info_dict["numero de negocios efetuados com o papel mercado no pregao"].append(part)  # noqa
     part = line[152:170]
-    info_dict["quantidade total de titulos negociados neste papel-mercado"].append(part) # noqa
+    info_dict["quantidade total de titulos negociados neste papel-mercado"].append(part)  # noqa
     part = line[170:188]
     part = float(part) / 100
-    info_dict["volume total de titulos negociados neste papel-mercado"].append(part) # noqa
+    info_dict["volume total de titulos negociados neste papel-mercado"].append(part)  # noqa
     part = line[188:201]
     part = float(part) / 100
-    info_dict["preco de exercicio para o mercado de opcoes ou valor do contrato para o mercado de  termo secundario"].append(part) # noqa
+    info_dict["preco de exercicio para o mercado de opcoes ou valor do contrato para o mercado de  termo secundario"].append(part)  # noqa
     part = line[201:202]
-    info_dict['indicador de correção de preços de exercícios ou valores de contrato para os mercados de opções ou termo secundário'].append(part) # noqa
+    info_dict['indicador de correção de preços de exercícios ou valores de contrato para os mercados de opções ou termo secundário'].append(part)  # noqa
     part = line[202:210]
-    info_dict['data do vencimento para os mercados de opções ou termo secundário'].append(part) # noqa
+    info_dict['data do vencimento para os mercados de opções ou termo secundário'].append(part)  # noqa
     part = line[210:217]
     part = int(part)
     info_dict['fator de cotação do papel'].append(part)
     part = line[217:230]
     part = float(part) / 100
-    info_dict['preço de exercício em pontos para opções referenciadas em dólar ou valor de contrato em pontos para termo secundário'].append(part) # noqa
+    info_dict['preço de exercício em pontos para opções referenciadas em dólar ou valor de contrato em pontos para termo secundário'].append(part)  # noqa
     part = line[230:242]
-    info_dict['código do papel no sistema isin ou código interno do papel'].append(part) # noqa
+    info_dict['código do papel no sistema isin ou código interno do papel'].append(part)  # noqa
     part = line[242: 245]
     info_dict['número de distribuição do papel'].append(part)
 
@@ -129,13 +131,13 @@ def get_data_as_dict(path, info_dict):
         for i, line in enumerate(file):
             if line[2:10] != "COTAHIST":
                 try:
-                    _ = line[1] # noqa
+                    _ = line[1]  # noqa
                     info_dict = parse_line(line, info_dict)
                 except IndexError:
                     pass
     return info_dict
-  
-  
+
+
   def get_df_from_b3_data(df,
                         stock_list):
     """
