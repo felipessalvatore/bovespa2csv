@@ -47,10 +47,13 @@ You can also use the class `BovespaParser` to get a pandas DataFrame from the tx
 
 ```python
 from bovespa2csv.BovespaParser import BovespaParser
+from bovespa2csv.util import get_df_from_b3_data
+
 
 parser = BovespaParser()
 parser.read_txt("COTAHIST_DXXXXXX.TXT")
-df = parser.df
+df = get_df_from_b3_data(parser.df, ["ITUB4"]
+
 ```
 
 
