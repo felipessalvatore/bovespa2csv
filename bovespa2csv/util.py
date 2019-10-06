@@ -134,3 +134,27 @@ def get_data_as_dict(path, info_dict):
                 except IndexError:
                     pass
     return info_dict
+  
+  
+  def get_df_from_b3_data(df,
+                        stock_list):
+    """
+
+    :param dfb3_data: input dataframe in b3 format
+    :type b3_data: pd.DataFrame
+    :param stock_list: list of stoks
+    :type stock_list: [str]
+    :return: cropped dataframe
+    :rtype: pd.DataFrame
+    """
+    df["codigo de negociação do papel"] = df["codigo de negociação do papel"].apply(lambda x: x.strip())
+    choice = df["codigo de negociação do papel"].isin(stock_list).values
+    df_choice = df.loc[choice, :]
+    df_choice.loc[:, "datetime"] = df_choice.loc[:,'data do pregao'].apply(lambda x: pd.Timestamp(x))
+    df_choice.loc[:, "ticker"] = df_choice.loc[:,"codigo de negociação do papel"].values
+    df_choice.loc[:, "open"] = df_choice.loc[:,'preco de abertura do papel-mercado no pregao'].values
+    df_choice.loc[:, "close"] = df_choice.loc[:,'preco do ultimo negocio do papel-mercado no pregao'].values
+    df_choice.loc[:, "high"] = df_choice.loc[:,'preco maximo do papel-mercado no pregao'].values
+    df_choice.loc[:, "low"] = df_choice.loc[:,'preco minimo do papel-mercado no pregao'].values
+    df_choice.loc[:, "volume"] = df_choice.loc[:,'volume total de titulos negociados neste papel-mercado'].values
+    return df_choice.loc[:,  ["datetime", "ticker", "open", "close", "high", "low", "volume"]].reset_index(drop=True)
